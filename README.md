@@ -47,13 +47,9 @@ pip install lightgbm scikit-learn pandas numpy matplotlib seaborn
 
 ```
 ├── code
-│   ├── lgbm_basic.ipynb   # LightGBM 기본 학습 노트북
-│   └── train.py           # (추가 예정) 모델 학습 파이썬 스크립트
-├── docs
-│   ├── pdf
-│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
-│   └── paper
-│       └── reference_paper.pdf
+│   └── lgbm_basic.ipynb   # LightGBM 기본 학습 노트북
+│   
+
 └── input
     └── data
         ├── train.csv
