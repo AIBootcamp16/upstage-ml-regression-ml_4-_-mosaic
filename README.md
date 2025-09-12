@@ -1,92 +1,138 @@
-# Title (Please modify the title)
-## Team
+# Mosaic ML 경진대회 (House Price Prediction)
 
-| ![박패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![이패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![최패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오패캠](https://avatars.githubusercontent.com/u/156163982?v=4) |
+## 👥 Team
+
+| ![박준수](https://avatars.githubusercontent.com/u/156163982?v=4) | ![정무곤](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김수현](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김예인](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오정택](https://avatars.githubusercontent.com/u/156163982?v=4) |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-|            [박패캠](https://github.com/UpstageAILab)             |            [이패캠](https://github.com/UpstageAILab)             |            [최패캠](https://github.com/UpstageAILab)             |            [김패캠](https://github.com/UpstageAILab)             |            [오패캠](https://github.com/UpstageAILab)             |
-|                            팀장, 담당 역할                             |                            담당 역할                             |                            담당 역할                             |                            담당 역할                             |                            담당 역할                             |
+| [박준수](https://github.com/parkjunsu3321) | [정무곤](http://github.com/mugon-jeong) | [김수현](https://github.com/Daisy7942) | [김예인](https://github.com/yeondu-0) | [오정택](https://github.com/Jeong5689) |
+| 팀장, Modeling / 코드 통합 | Data Preprocessing / EDA | Feature Engineering | Hyperparameter Tuning | Documentation / 발표 자료 |
+
+---
 
 ## 0. Overview
+
 ### Environment
-- _Write Development environment_
+
+- Python 3.10  
+- Jupyter Notebook  
+- LightGBM 4.x  
+- Scikit-learn 1.5+  
+- Pandas, NumPy, Matplotlib, Seaborn  
 
 ### Requirements
-- _Write Requirements_
 
-## 1. Competiton Info
+```bash
+pip install lightgbm scikit-learn pandas numpy matplotlib seaborn
+```
+
+---
+
+## 1. Competition Info
 
 ### Overview
 
-- _Write competition information_
+- 주어진 학습 데이터(train.csv)를 바탕으로 평가 데이터(eval.csv)에 대한 예측을 수행하는 회귀 문제  
+- 목표: 주어진 피처(feature)들을 활용해 타깃 변수를 정확히 예측  
 
 ### Timeline
 
-- ex) January 10, 2024 - Start Date
-- ex) February 10, 2024 - Final submission deadline
+- Start Date: 2025-09-01  
+- Final Submission: 2025-09-30  
+
+---
 
 ## 2. Components
 
 ### Directory
 
-- _Insert your directory structure_
-
-e.g.
 ```
 ├── code
-│   ├── jupyter_notebooks
-│   │   └── model_train.ipynb
-│   └── train.py
+│   ├── lgbm_basic.ipynb   # LightGBM 기본 학습 노트북
+│   └── train.py           # (추가 예정) 모델 학습 파이썬 스크립트
 ├── docs
 │   ├── pdf
 │   │   └── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
 │   └── paper
+│       └── reference_paper.pdf
 └── input
     └── data
-        ├── eval
-        └── train
+        ├── train.csv
+        └── eval.csv
 ```
 
-## 3. Data descrption
+---
 
-### Dataset overview
+## 3. Data Description
 
-- _Explain using data_
+### Dataset Overview
+
+- **train.csv**: 학습용 데이터 (피처 + 타깃)  
+- **eval.csv**: 평가용 데이터 (피처만 제공, 예측 제출 필요)  
 
 ### EDA
 
-- _Describe your EDA process and step-by-step conclusion_
+- 결측치 확인 → 결측 없음  
+- 변수 분포 확인 → 일부 스케일 차이가 큰 피처 존재  
+- 상관계수 분석 → 특정 피처군에서 높은 상관관계 발견  
 
 ### Data Processing
 
-- _Describe data processing process (e.g. Data Labeling, Data Cleaning..)_
+- 불필요한 컬럼 제거  
+- StandardScaler 적용 (특정 모델에서 활용 가능하도록)  
+- train/test split 후 모델 학습  
+
+---
 
 ## 4. Modeling
 
-### Model descrition
+### Model Description
 
-- _Write model information and why your select this model_
+- **LightGBM (LGBMRegressor)**  
+  - 빠른 학습 속도와 효율적인 메모리 사용  
+  - 대규모 데이터에서도 우수한 성능  
+  - 기본 하이퍼파라미터로 시작 후, 추후 Optuna를 통한 튜닝 예정  
 
 ### Modeling Process
 
-- _Write model train and test process with capture_
+1. 데이터 로드 및 전처리  
+2. train/test split  
+3. LGBMRegressor 학습  
+4. 예측 및 RMSE 평가  
+
+```python
+from lightgbm import LGBMRegressor
+from sklearn.metrics import mean_squared_error
+
+model = LGBMRegressor(random_state=42)
+model.fit(X_train, y_train)
+preds = model.predict(X_valid)
+
+rmse = mean_squared_error(y_valid, preds, squared=False)
+print("Validation RMSE:", rmse)
+```
+
+---
 
 ## 5. Result
 
 ### Leader Board
 
-- _Insert Leader Board Capture_
-- _Write rank and score_
+- Local Validation RMSE: **0.XXXX**  
+- Public LB: **Rank X / Score 	12989.6182**  
 
 ### Presentation
 
-- _Insert your presentaion file(pdf) link_
+- [발표 자료 PPT 링크](https://docs.google.com/presentation/d/1PjgTLTGMpGp80vlySwAtpP0xKj7b8I3V/edit?usp=sharing&ouid=116241898945312005453&rtpof=true&sd=true)  
+
+---
 
 ## etc
 
 ### Meeting Log
 
-- _Insert your meeting log link like Notion or Google Docs_
+- [회의록 (Notion)](https://www.notion.so/4-25240cb3731d800b8ee0f277ad92fc95?source=copy_link)
 
 ### Reference
 
-- _Insert related reference_
+- [LightGBM 공식 문서](https://lightgbm.readthedocs.io/)  
+- [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)  
