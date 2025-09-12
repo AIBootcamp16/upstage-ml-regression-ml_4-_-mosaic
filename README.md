@@ -5,7 +5,7 @@
 | ![박준수](https://avatars.githubusercontent.com/u/156163982?v=4) | ![정무곤](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김수현](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김예인](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오정택](https://avatars.githubusercontent.com/u/156163982?v=4) |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
 | [박준수](https://github.com/parkjunsu3321) | [정무곤](http://github.com/mugon-jeong) | [김수현](https://github.com/Daisy7942) | [김예인](https://github.com/yeondu-0) | [오정택](https://github.com/Jeong5689) |
-| 팀장, Modeling / 코드 통합 | Data Preprocessing / EDA | Feature Engineering | Hyperparameter Tuning | Documentation / 발표 자료 |
+| 팀장, Modeling / 코드 통합 | Modeling / Data Preprocessing | EDA / Hyperparameter Tuning | Feature Engineering | Data Preprocessing / EDA |
 
 ---
 
