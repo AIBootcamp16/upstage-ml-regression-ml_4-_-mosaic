@@ -46,14 +46,48 @@ pip install lightgbm scikit-learn pandas numpy matplotlib seaborn
 ### Directory
 
 ```
-├── code
-│   └── lgbm_basic.ipynb   # LightGBM 기본 학습 노트북
-│   
-
-└── input
-    └── data
-        ├── train.csv
-        └── eval.csv
++---conny
+|   +---01_address
+|   |       address.ipynb
+|   |
+|   +---02_data_process
+|   |       process.ipynb
+|   |       test.csv
+|   |       train.csv
+|   |
+|   +---03_outlier
+|   |       outlier.ipynb
+|   |
+|   +---04_model
+|   |       lgbm_basic.ipynb
+|   |       lgbm_optuna.ipynb
+|   |       pycaret.ipynb
+|   |       random_forest.ipynb
+|   |       random_forest_optuna.ipynb
+|   |
+|   \---data
+|           addresses.csv
+|           apt_brand.csv
+|           bus_feature.csv
+|           construction.csv
+|           school.csv
+|           subway_feature.csv
+|
++---parkjunsu3321
+|       lgbm.ipynb
+|       lgbm_using_ensemble_boosting_type.ipynb
+|       my_baseline_dev.ipynb
+|       my_baseline_v1.ipynb
+|
+\---project_yein
+    +---data_process
+    |       1. address.ipynb
+    |       2. process.ipynb
+    |       3. market.ipynb
+    |       4. outlier.ipynb
+    |
+    \---model
+            LGBM_2020.ipynb
 ```
 
 ---
