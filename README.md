@@ -37,7 +37,7 @@ pip install lightgbm scikit-learn pandas numpy matplotlib seaborn
 ### Timeline
 
 - Start Date: 2025-09-01  
-- Final Submission: 2025-09-30  
+- Final Submission: 2025-09-11
 
 ---
 
@@ -113,7 +113,7 @@ print("Validation RMSE:", rmse)
 
 ### Leader Board
 
-- Local Validation RMSE: **0.XXXX**  
+- Local Validation RMSE: **7769.56380**  
 - Public LB: **Rank X / Score 	12989.6182**  
 
 ### Presentation
